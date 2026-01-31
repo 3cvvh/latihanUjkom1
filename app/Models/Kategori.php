@@ -10,9 +10,9 @@ class Kategori extends Model
 {
     protected $guarded = ["id"]; //memilih field apa saja yang tidak boleh di isi(berarti sisa nya boleh diisi)
     //mutator untuk mengenrate slug
-    public function setSlugAttribute(){
-    $name = $this->attributes["name"];
-    $this->attributes["slug"] = Str::slug($name);
+    public function setnameAttribute($value){
+    $this->attributes["name"] = $value;
+    $this->attributes["slug"] = Str::slug($value);
     }
     public function shoe():HasMany //membuat relasi ke produk agar bisa dipanggil fr nya
     {
