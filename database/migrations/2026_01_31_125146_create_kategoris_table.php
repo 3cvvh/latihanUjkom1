@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('kategoris', function (Blueprint $table) {
             $table->id();
             $table->string("name"); //field untuk nama kategori
-            $table->string("gambar"); //field untuk menyimpan path dari gambar kategori
+            $table->string("gambar")->nullable(); //field untuk menyimpan path dari gambar kategori
             $table->string("slug"); //field untuk menyimpan slug yang akan di generate otomatis
             $table->timestamps();
         });

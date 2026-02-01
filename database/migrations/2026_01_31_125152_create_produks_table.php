@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("name");
             $table->bigInteger("stock");
             $table->string("thumb");
-            $table->text("about");
+            $table->text("about")->nullable();
             $table->bigInteger("harga");
             $table->foreignId("kategori_id")->constrained("kategoris")->onDelete("cascade");
             $table->foreignId("merek_id")->constrained("mereks")->onDelete("cascade");

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->bigInteger("grandTotal_amount");
             $table->boolean("isPaid")->default(false);
             $table->foreignId("shoe_id")->constrained("produks")->onDelete("cascade");
-            $table->foreignId("promo_code_id")->nullable()->constrained("promo_codes")->onDelete("cascade");
+            $table->foreignId("promo_code_id")->nullable()->constrained("promo_codes")->onDelete("cascade"); //kalo tidak diisi tidak apa apa karna ada nullable
             $table->timestamps();
         });
     }
