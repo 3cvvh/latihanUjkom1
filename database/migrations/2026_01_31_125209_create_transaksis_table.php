@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text("alamat");
             $table->string("trxId");
             $table->string("proof");
+            $table->string("size");
             $table->bigInteger("subTotal_amount");
             $table->bigInteger("grandTotal_amount");
             $table->boolean("isPaid")->default(false);
