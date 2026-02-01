@@ -9,9 +9,10 @@ class Transaksi extends Model
 {
     protected $guarded = ["id"]; //memilih field apa saja yang tidak boleh di isi(berarti sisa nya boleh diisi)
     //mutator yang berfungsi mengenerate trx saat record akan ditambahkan
-    public function setTrxIdAttribute():void
+    public function setNameAttribute($value):void
     {
-        $this->attributes["trxId"] =  "aqiltest" . time();
+        $this->attributes["trxId"] =  $value . time();
+        $this->attributes["name"] = $value;
     }
     public function shoe():BelongsTo
     {
