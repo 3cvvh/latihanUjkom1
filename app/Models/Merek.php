@@ -9,14 +9,10 @@ use Illuminate\Support\Str;
 class Merek extends Model
 {
     protected $guarded = ["id"]; //memilih field apa saja yang tidak boleh di isi(berarti sisa nya boleh diisi)
-    // public function setnameAttribute($value){
-    // $this->attributes["name"] = $value;
-    // $this->attributes["slug"] = Str::slug($value);
-    // }
     //mutator untuk mengenrate slug
-    public function setSlugAttribute(){
-    $name = $this->attributes["name"];
-    $this->attributes["slug"] = str::slug($name);
+    public function setnameAttribute($value){
+    $this->attributes["name"] = $value; //mengambil input name lalu mengisi nya kek field name
+    $this->attributes["slug"] = Str::slug($value); //mengambil name yang di input user lalu dibuat menjadi slug setelah itu dimasukan ke field slug
     }
     public function shoe():HasMany
     {
