@@ -20,7 +20,8 @@ class produkForm
                 FileUpload::make("thumb") //membuat input file yang akan mengisi data di field thumb
                 ->required() //harus diisi
                 ->directory("thumb-produks") //foto akan disimpan ke folder thumb-produks
-                ->image(), //harus imag seprti jpg png jepg
+                ->image() //harus imag seprti jpg png jepg
+                ->disk("public"),
                 Select::make("kategori_id") //membuat input options yang akan mengisi kategori id
                 ->relationship("kategori","name") //memanggil relasi pada table produk untuk mengisi options
                 ->required(), //harus diisi
@@ -33,6 +34,7 @@ class produkForm
                 ->schema([
                     FileUpload::make("fotos") //membuat compo form uploud yang akan mengisi field fotos di table produk photos
                     ->directory("detail-produks-imgs") //akan disimpan ke folder ini gambar nya
+                    ->disk("public")
                     ->image() //harus img
                 ])
                 ->default(null) //memberikan default null agar reater awal nya kosong

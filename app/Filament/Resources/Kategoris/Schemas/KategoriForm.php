@@ -20,7 +20,8 @@ class KategoriForm
                 ->image() //agar hanya image yang dimasukan
                 ->nullable() //membuat field jadi opsional
                 ->label("gambar kategori") //memberi nama label di atas kategori
-                ->directory("kategoriPhotos"), //memilih directory mana nanti photo disimpan
+                ->directory("kategoriPhotos") //memilih directory mana nanti photo disimpan
+                ->disk("public")
             ]);
     }
 }

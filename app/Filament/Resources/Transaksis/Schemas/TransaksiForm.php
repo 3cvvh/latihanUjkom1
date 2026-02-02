@@ -24,11 +24,13 @@ class TransaksiForm
                 ->required(), //harus diisi
                 Select::make("promo_code_id") //option prmo code
                 ->relationship("promo_code","code")//memanggil relasi di transaksi lalu mengambil field code
-                ->nullable(), //tidak wajib diisi
+                ->nullable() //tidak wajib diisi
+                ->hiddenOn("edit"),
                 FileUpload::make("proof") //untuk mengaploud bukti pembayarn
                 ->image()
                 ->label("bukti pembayaran")
-                ->directory("bukti-pembayaran"),
+                ->directory("bukti-pembayaran")
+                ->disk("public"),
                 TextInput::make("jumlah") //jumlah product
                 ->numeric()
                 ->required(),

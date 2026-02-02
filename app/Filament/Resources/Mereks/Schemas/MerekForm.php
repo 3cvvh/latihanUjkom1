@@ -29,7 +29,8 @@ class MerekForm
                 ->label("foto produk") //label
                 ->directory("merek-photos") //memilih directory mana foto akan di uploud
                 ->image() //kalo ada ini tipe file nya harus img sepreti png jpg
-                ->nullable(), //tidak apa apa kalo ga diisi
+                ->nullable() //tidak apa apa kalo ga diisi
+                ->disk("public")
             ]);
     }
 }
