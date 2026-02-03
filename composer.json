@@ -8,7 +8,10 @@
     "require": {
         "php": "^8.2",
         "ariaieboy/filament-currency": "^2.0",
+        "filament/actions": "*",
         "filament/filament": "4.0",
+        "filament/forms": "*",
+        "filament/tables": "*",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
     },
