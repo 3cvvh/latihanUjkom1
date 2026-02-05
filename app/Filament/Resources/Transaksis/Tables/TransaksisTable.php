@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Transaksis\Tables;
 
 use App\Filament\actionBtn\downloadProofAction;
 use App\Filament\Resources\action\approveAction;
+use App\Filament\Resources\action\downloadProofAction as ActionDownloadProofAction;
 use Dom\Text;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -37,7 +38,7 @@ class TransaksisTable
             ])
             ->recordActions([
                 ViewAction::make(),
-                downloadProofAction::make(),
+                ActionDownloadProofAction::make(),
                 EditAction::make()->visible(fn($record) => $record->isPaid != true),
                 approveAction::make()
             ])

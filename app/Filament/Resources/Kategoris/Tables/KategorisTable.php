@@ -21,6 +21,7 @@ class KategorisTable
                 TextColumn::make("name") //membuat field di table untuk menampilkan data kategori dengan field nama
                 ->label("nama kategori"), //label yang bisa menganti table header dari td ini
                 ImageColumn::make("gambar") //menampilkan column gambar kategori
+                ->disk("public")
             ])
             ->filters([
                 //

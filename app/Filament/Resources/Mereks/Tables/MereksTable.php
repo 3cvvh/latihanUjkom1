@@ -20,7 +20,8 @@ class MereksTable
                 TextColumn::make("name") //memunculkan data dari field nama di table merek
                 ->label("nama merek"), //melebeli th
                 ImageColumn::make("icon") //memnuculkan gambar dari merek
-                ->label("gambar merek") //memberikan label
+                ->label("gambar merek")//memberikan label
+                ->disk("public") //mencari gambar di public disk
             ])
             ->filters([
                 //

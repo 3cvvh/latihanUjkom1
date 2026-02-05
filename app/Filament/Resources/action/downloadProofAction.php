@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\actionBtn;
+namespace App\Filament\Resources\action;
 
 use App\Models\Transaksi;
 use Filament\Actions\Action;
