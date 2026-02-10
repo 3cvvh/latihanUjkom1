@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background: #f9f9f9; */
+      color: #333;
+    }
+    .invoice-container {
+      width: 790px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .invoice-details {
+      margin-bottom: 20px;
+    }
+    .invoice-details p {
+      margin: 5px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    table th {
+      background: #f0f0f0;
+    }
+    .total {
+      text-align: right;
+      font-weight: bold;
+    }
+    .status {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: right;
+    }
+    .status.paid {
+      color: green;
+    }
+    .status.notPaid {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="invoice-container">
+    <h1>Invoice</h1>
+    <div class="invoice-details">
+      <p><strong>ID:</strong> {{ $record->id }}</p>
+      <p><strong>Name:</strong> {{ $record->name }}</p>
+      <p><strong>Alamat:</strong> {{ $record->alamat }}</p>
+      <p><strong>Transaksi ID:</strong> {{ $record->trxId }}</p>
+      <p><strong>Shoe:</strong> {{ $record->shoe->name }}</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Jumlah</th>
+        <th>Size</th>
+        <th>Subtotal</th>
+        <th>Grand Total</th>
+      </tr>
+      <tr>
+        <td>{{ $record->jumlah }}</td>
+        <td>{{ $record->size }}</td>
+        <td>{{ $record->subTotal_amount }}</td>
+        <td>{{ $record->grandTotal_amount }}</td>
+      </tr>
+    </table>
+
+    <div class="status {{ $record->isPaid ? 'paid' : 'notPaid' }}">
+      {{ $record->isPaid ? 'Paid' : 'Not Paid' }}
+    </div>
+  </div>
+</body>
+</html>
